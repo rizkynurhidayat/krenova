@@ -6,7 +6,6 @@ import 'package:krenova/presentation/controller/firebase_service.dart';
 
 import '../../data/mode.dart';
 import '../controller/conroller.dart';
-import '../widget/drawer.dart';
 
 class HomePage extends StatelessWidget {
   const HomePage({super.key});
@@ -15,7 +14,6 @@ class HomePage extends StatelessWidget {
   Widget build(BuildContext context) {
     final controller = Get.put(DataBaseController());
     return Scaffold(
-      drawer: const DrawerKu(),
       appBar: AppBar(
         title: const Text('Project Krenova'),
       ),

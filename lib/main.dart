@@ -2,8 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 
 import 'package:firebase_core/firebase_core.dart';
-import 'package:krenova/presentation/pages/admin/add_data.dart';
-import 'package:krenova/presentation/pages/admin/home_admin.dart';
+
 import 'package:krenova/presentation/pages/home_user.dart';
 import 'firebase_options.dart';
 import 'package:intl/date_symbol_data_local.dart';
