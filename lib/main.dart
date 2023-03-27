@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 
 import 'package:firebase_core/firebase_core.dart';
+import 'package:krenova/presentation/pages/dashboard.dart';
 
 import 'package:krenova/presentation/pages/home_user.dart';
 import 'firebase_options.dart';
@@ -11,7 +12,7 @@ void main() async {
   await Firebase.initializeApp(
     options: DefaultFirebaseOptions.currentPlatform,
   );
-  initializeDateFormatting('fr_FR', null).then((_) => runApp(const MyApp()));
+  initializeDateFormatting('id_ID', null).then((_) => runApp(const MyApp()));
 }
 
 class MyApp extends StatelessWidget {
@@ -21,11 +22,12 @@ class MyApp extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return GetMaterialApp(
+      debugShowCheckedModeBanner: false,
       title: 'Flutter Demo',
       theme: ThemeData(
         primarySwatch: Colors.blue,
       ),
-      home: const HomePage(),
+      home: const DashboardPage(),
     );
   }
 }

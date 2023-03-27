@@ -13,47 +13,42 @@ class HomePage extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     final controller = Get.put(DataBaseController());
-    return Scaffold(
-      appBar: AppBar(
-        title: const Text('Project Krenova'),
-      ),
-      body: Center(
-          child: StreamBuilder<QuerySnapshot<Map<String, dynamic>>>(
-        stream: controller.getAllData(),
-        builder: (context, snapshot) {
-          try {
-            if (snapshot.connectionState == ConnectionState.waiting) {
-              return const CircularProgressIndicator();
-            } else if (snapshot.hasData) {
-              final data = snapshot.data!.docs;
+    return Center(
+        child: StreamBuilder<QuerySnapshot<Map<String, dynamic>>>(
+      stream: controller.getAllData(),
+      builder: (context, snapshot) {
+        try {
+          if (snapshot.connectionState == ConnectionState.waiting) {
+            return const CircularProgressIndicator();
+          } else if (snapshot.hasData) {
+            final data = snapshot.data!.docs;
 
-              return ListView.builder(
-                itemCount: data.length,
-                itemBuilder: (context, index) {
-                  final id = data[index].id;
-                  final batik = BatikModel.fromJson(data[index].data());
-                  return ListTile(
-                    onTap: () {},
-                    leading: Container(
-                      width: 50,
-                      height: 50,
-                      color: Colors.amber,
-                    ),
-                    title: Text(batik.nama!),
-                    subtitle: Text("${batik.detail!} | $id"),
-                  );
-                },
-              );
-            } else if (snapshot.hasError) {
-              snapshot.printError();
-            }
-          } catch (err) {
-            print(err);
+            return ListView.builder(
+              itemCount: data.length,
+              itemBuilder: (context, index) {
+                final id = data[index].id;
+                final batik = BatikModel.fromJson(data[index].data());
+                return ListTile(
+                  onTap: () {},
+                  leading: Container(
+                    width: 50,
+                    height: 50,
+                    color: Colors.amber,
+                  ),
+                  title: Text(batik.nama!),
+                  subtitle: Text("${batik.detail!} | $id"),
+                );
+              },
+            );
+          } else if (snapshot.hasError) {
+            snapshot.printError();
           }
-          return Text('something error with you');
-        },
-      )),
-    );
+        } catch (err) {
+          print(err);
+        }
+        return Text('something error with you');
+      },
+    ));
   }
 }
 
