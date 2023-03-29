@@ -3,10 +3,8 @@ import 'package:flutter/material.dart';
 
 import 'package:get/get.dart';
 import 'package:krenova/presentation/controller/firebase_service.dart';
-import 'package:url_launcher/url_launcher.dart';
 
 import '../../data/mode.dart';
-import '../controller/conroller.dart';
 
 class HomePage extends StatelessWidget {
   const HomePage({super.key});
@@ -49,15 +47,8 @@ class HomePage extends StatelessWidget {
         } catch (err) {
           print(err);
         }
-        return Text('something error with you');
+        return const Text('something error with you');
       },
     ));
   }
-}
-
-Future<void> refreshKu() async {
-  await Future.delayed(const Duration(seconds: 2));
-  Builder(
-    builder: (context) => const HomePage(),
-  );
 }

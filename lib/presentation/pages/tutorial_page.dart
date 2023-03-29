@@ -1,10 +1,7 @@
 import 'package:flutter/material.dart';
-import 'package:flutter/src/widgets/framework.dart';
-import 'package:flutter/src/widgets/placeholder.dart';
-import 'package:get/get.dart';
+
 import 'package:introduction_screen/introduction_screen.dart';
-import 'package:krenova/presentation/pages/dashboard.dart';
-import 'package:krenova/presentation/pages/home_user.dart';
+
 import 'package:lottie/lottie.dart';
 
 class TutorialPage extends StatelessWidget {

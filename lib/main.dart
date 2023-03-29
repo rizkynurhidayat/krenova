@@ -4,9 +4,7 @@ import 'package:get/get.dart';
 import 'package:firebase_core/firebase_core.dart';
 import 'package:krenova/presentation/pages/dashboard.dart';
 
-import 'package:krenova/presentation/pages/home_user.dart';
 import 'firebase_options.dart';
-import 'package:intl/date_symbol_data_local.dart';
 
 void main() async {
   WidgetsFlutterBinding.ensureInitialized();
