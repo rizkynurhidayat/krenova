@@ -3,6 +3,7 @@ import 'package:flutter/material.dart';
 
 import 'package:get/get.dart';
 import 'package:krenova/presentation/controller/firebase_service.dart';
+import 'package:url_launcher/url_launcher.dart';
 
 import '../../data/mode.dart';
 import '../controller/conroller.dart';
@@ -29,7 +30,9 @@ class HomePage extends StatelessWidget {
                 final id = data[index].id;
                 final batik = BatikModel.fromJson(data[index].data());
                 return ListTile(
-                  onTap: () {},
+                  onTap: () {
+                    controller.openlink(batik.link!);
+                  },
                   leading: Container(
                     width: 50,
                     height: 50,
