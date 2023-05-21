@@ -3,10 +3,11 @@
     <!-- <queries>
         <package android:name="com.instagram.android" /> 
     </queries> -->
+<uses-permission android:name="android.permission.INTERNET"/>
    <application
-        android:label="krenova"
+        android:label="Batik Vision"
         android:name="${applicationName}"
-        android:icon="@mipmap/ic_launcher">
+        android:icon="@mipmap/launcher_icon">
         <activity
             android:name=".MainActivity"
             android:exported="true"

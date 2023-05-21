@@ -2,9 +2,11 @@ import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 
 import 'package:firebase_core/firebase_core.dart';
-import 'package:krenova/presentation/pages/dashboard.dart';
+
+import 'package:krenova/presentation/pages/tutorial_page.dart';
 
 import 'firebase_options.dart';
+import '../presentation/theme/color_schemes.g.dart';
 
 void main() async {
   WidgetsFlutterBinding.ensureInitialized();
@@ -25,9 +27,19 @@ class MyApp extends StatelessWidget {
       debugShowCheckedModeBanner: false,
       title: 'Flutter Demo',
       theme: ThemeData(
-        primarySwatch: Colors.blue,
-      ),
-      home: const DashboardPage(),
+          useMaterial3: true,
+          colorScheme: lightColorScheme,
+          appBarTheme: AppBarTheme(
+            backgroundColor: lightColorScheme.primaryContainer,
+          ),
+          elevatedButtonTheme: ElevatedButtonThemeData(
+              style: ButtonStyle(
+                  backgroundColor: MaterialStatePropertyAll(
+                    lightColorScheme.onPrimaryContainer,
+                  ),
+                  foregroundColor: MaterialStatePropertyAll(
+                      lightColorScheme.primaryContainer)))),
+      home: const TutorialPage(),
     );
   }
 }
